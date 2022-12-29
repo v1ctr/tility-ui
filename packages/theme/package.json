@@ -1,6 +1,6 @@
 {
-  "name": "@tility-ui/button",
-  "version": "0.0.0",
+  "name": "@tility-ui/theme",
+  "version": "1.0.0",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -14,10 +14,6 @@
     "dev": "tsup src/index.tsx --format esm,cjs --watch --dts --external react",
     "lint": "TIMING=1 eslint \"src/**/*.ts*\"",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
-  },
-  "dependencies": {
-    "@tility-ui/utils": "workspace:*",
-    "@tility-ui/theme": "workspace:*"
   },
   "devDependencies": {
     "@tility-ui/tsconfig": "workspace:*",
