@@ -1,10 +1,20 @@
+export interface ButtonVariant {
+  base: string;
+  states: {
+    enabled: string;
+    disabled: string;
+    focused: string;
+    hovered: string;
+  };
+}
+
 export interface ButtonTheme {
   container: string;
   spinner: string;
   variants: {
-    primary: string;
-    secondary: string;
-    text: string;
+    primary: ButtonVariant;
+    secondary: ButtonVariant;
+    text: ButtonVariant;
   };
   sizes: {
     xs: string;
@@ -17,14 +27,46 @@ export interface ButtonTheme {
 
 export const buttonTheme: ButtonTheme = {
   container:
-    "w-full inline-flex justify-center rounded-md font-medium sm:w-auto",
-  spinner: "animate-spin -ml-1 mr-3 h-5 w-5",
+    "w-full inline-flex justify-center items-center rounded-md font-medium sm:w-auto",
+  spinner: "animate-spin -ml-1 mr-3 w-5 h-5",
   variants: {
-    primary:
-      "shadow-sm border outline-none bg-blue-600 dark:bg-blue-700 border-transparent text-white hover:bg-blue-700 hover:dark:bg-blue-800",
-    secondary:
-      "shadow-sm border outline-none bg-white dark:bg-gray-900 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 hover:bg-gray-50 hover:dark:bg-gray-800",
-    text: "outline-none text-blue-600 dark:text-blue-500 hover:text-blue-700 hover:dark:text-blue-400",
+    primary: {
+      base: "shadow-sm border outline-none",
+      states: {
+        enabled:
+          "bg-primary-600 dark:bg-primary-700 border-transparent text-white",
+        disabled:
+          "bg-primary-600/60 dark:bg-primary-700/60 text-white/70 dark:text-white/60 border-transparent",
+        focused:
+          "bg-primary-600 dark:bg-primary-700 border-transparent text-white ring ring-offset-2 dark:ring-offset-gray-900 ring-gray-200 dark:ring-gray-600",
+        hovered:
+          "bg-primary-700 dark:bg-primary-800 border-primary-700 dark:border-primary-800 text-white",
+      },
+    },
+    secondary: {
+      base: "shadow-sm border outline-none",
+      states: {
+        enabled:
+          "bg-white dark:bg-gray-900 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200",
+        disabled:
+          "bg-white/60 dark:bg-gray-900/60 border-gray-300 dark:border-gray-600 text-gray-700/60 dark:text-gray-200/60",
+        focused:
+          "bg-white dark:bg-gray-900 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 ring ring-offset-2 dark:ring-offset-gray-900 ring-gray-200 dark:ring-gray-600",
+        hovered:
+          "bg-gray-50 dark:bg-gray-800 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200",
+      },
+    },
+    text: {
+      base: "outline-none",
+      states: {
+        enabled: "text-primary-600 dark:text-primary-500",
+        disabled: "text-primary-600/60 dark:text-primary-500/60",
+        focused:
+          "text-primary-600 dark:text-primary-500 ring ring-offset-2 dark:ring-offset-gray-900 ring-gray-200 dark:ring-gray-600",
+        hovered:
+          "bg-primary-50 dark:bg-gray-800 text-primary-700 dark:text-primary-400",
+      },
+    },
   },
   sizes: {
     xs: "px-2 py-1.5 text-sm sm:text-xs",

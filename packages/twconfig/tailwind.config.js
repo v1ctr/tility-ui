@@ -1,3 +1,5 @@
+const colors = require("tailwindcss/colors");
+
 module.exports = {
   darkMode: "class",
   content: [
@@ -6,7 +8,11 @@ module.exports = {
     "./.storybook/*.{ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: colors.blue,
+      },
+    },
   },
   plugins: [],
 };

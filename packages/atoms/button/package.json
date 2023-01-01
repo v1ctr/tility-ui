@@ -16,8 +16,12 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "dependencies": {
-    "@tility-ui/utils": "workspace:*",
-    "@tility-ui/theme": "workspace:*"
+    "@react-aria/button": "^3.6.4",
+    "@react-aria/focus": "^3.10.1",
+    "@react-aria/interactions": "^3.13.1",
+    "@react-types/button": "^3.7.0",
+    "@tility-ui/theme": "workspace:*",
+    "@tility-ui/utils": "workspace:*"
   },
   "devDependencies": {
     "@tility-ui/tsconfig": "workspace:*",
