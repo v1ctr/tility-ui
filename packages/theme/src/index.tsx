@@ -5,4 +5,5 @@ export {
   useTheme,
   ThemeProvider,
   type ThemeProviderProps,
+  type DeepPartial,
 } from "./ThemeProvider";

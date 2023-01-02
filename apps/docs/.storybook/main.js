@@ -39,6 +39,10 @@ module.exports = {
               "../../../packages/atoms/button/"
             ),
           },
+          {
+            find: "@tility-ui/theme",
+            replacement: path.resolve(__dirname, "../../../packages/theme/"),
+          },
         ],
       },
     };
