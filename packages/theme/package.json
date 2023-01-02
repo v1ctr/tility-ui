@@ -9,6 +9,23 @@
   "files": [
     "dist/**"
   ],
+  "homepage": "https://github.com/v1ctr/tility-ui#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/v1ctr/tility-ui",
+    "directory": "packages/theme"
+  },
+  "bugs": {
+    "url": "https://github.com/v1ctr/tility-ui/issues"
+  },
+  "keywords": [
+    "react",
+    "react-ui",
+    "design-system",
+    "tailwind",
+    "tailwindcss",
+    "tility-ui"
+  ],
   "scripts": {
     "build": "tsup src/index.tsx --format esm,cjs --dts --external react",
     "dev": "tsup src/index.tsx --format esm,cjs --watch --dts --external react",

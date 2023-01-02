@@ -3,6 +3,20 @@
   "version": "0.0.0",
   "main": "index.js",
   "license": "MIT",
+  "homepage": "https://github.com/v1ctr/tility-ui#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/v1ctr/tility-ui",
+    "directory": "packages/eslint-config-tility"
+  },
+  "bugs": {
+    "url": "https://github.com/v1ctr/tility-ui/issues"
+  },
+  "keywords": [
+    "eslint",
+    "eslint-config",
+    "tility-ui"
+  ],
   "dependencies": {
     "eslint-config-next": "^12.0.8",
     "eslint-config-prettier": "^8.3.0",

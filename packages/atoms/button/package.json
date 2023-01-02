@@ -1,5 +1,6 @@
 {
   "name": "@tility-ui/button",
+  "description": "A customizable react button",
   "version": "0.0.0",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -8,6 +9,24 @@
   "license": "MIT",
   "files": [
     "dist/**"
+  ],
+  "homepage": "https://github.com/v1ctr/tility-ui#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/v1ctr/tility-ui",
+    "directory": "packages/atoms/button"
+  },
+  "bugs": {
+    "url": "https://github.com/v1ctr/tility-ui/issues"
+  },
+  "keywords": [
+    "react",
+    "react-ui",
+    "react-button",
+    "design-system",
+    "tailwind",
+    "tailwindcss",
+    "tility-ui"
   ],
   "scripts": {
     "build": "tsup src/index.tsx --format esm,cjs --dts --external react",
