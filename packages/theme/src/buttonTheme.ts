@@ -1,3 +1,5 @@
+import { Sizes } from "./shared";
+
 export interface ButtonVariant {
   base: string;
   states: {
@@ -10,25 +12,31 @@ export interface ButtonVariant {
 
 export interface ButtonTheme {
   container: string;
-  spinner: string;
+  spinner: {
+    base: string;
+    sizes: Sizes;
+  };
   variants: {
     primary: ButtonVariant;
     secondary: ButtonVariant;
     text: ButtonVariant;
   };
-  sizes: {
-    xs: string;
-    sm: string;
-    md: string;
-    lg: string;
-    xl: string;
-  };
+  sizes: Sizes;
 }
 
 export const buttonTheme: ButtonTheme = {
   container:
     "w-full inline-flex justify-center items-center rounded-md font-medium sm:w-auto",
-  spinner: "animate-spin -ml-1 mr-3 w-5 h-5",
+  spinner: {
+    base: "animate-spin",
+    sizes: {
+      xs: "mr-2 w-3.5 h-3.5",
+      sm: "-ml-1 mr-2 w-4 h-4",
+      md: "-ml-1 mr-2 w-5 h-5",
+      lg: "-ml-2 mr-3 w-5 h-5",
+      xl: "-ml-2 mr-3 w-6 h-6",
+    },
+  },
   variants: {
     primary: {
       base: "shadow-sm border outline-none",

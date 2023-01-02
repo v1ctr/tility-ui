@@ -31,6 +31,7 @@ import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs";
       description: "Whether the loading spinner should be displayed.",
       table: {
         type: { summary: "boolean" },
+        defaultValue: { summary: "false" },
       },
     },
     isDisabled: {
@@ -211,7 +212,8 @@ export const Template = (args) => <Button {...args}>Click me</Button>;
 
 # Button
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget consectetur tempor, nisl nunc egestas nisi, euismod aliquam nisl nunc euismod.
+The `<Button>` element is an interactive element activated by a user with a mouse, keyboard, finger, voice command, or other assistive technology.
+It can be customized with different variants or sizes.
 
 ## Variants
 
@@ -247,10 +249,29 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl ege
 
 ## States
 
+### Loading
+
 <Canvas>
+  <Button isLoading={true} size="xs">
+    Click me
+  </Button>
+  <Button isLoading={true} size="sm">
+    Click me
+  </Button>
   <Story name="Loading" args={{ isLoading: true }}>
     {Template.bind({})}
   </Story>
+  <Button isLoading={true} size="lg">
+    Click me
+  </Button>
+  <Button isLoading={true} size="xl">
+    Click me
+  </Button>
+</Canvas>
+
+### Disabled
+
+<Canvas>
   <Story name="Disabled" args={{ isDisabled: true }}>
     {Template.bind({})}
   </Story>
