@@ -1,6 +1,6 @@
 {
-  "name": "@tility-ui/button",
-  "description": "A customizable react button",
+  "name": "@tility-ui/theme",
+  "description": "Default styling for tility-ui components",
   "version": "0.1.0",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -14,7 +14,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/v1ctr/tility-ui",
-    "directory": "packages/atoms/button"
+    "directory": "packages/theme"
   },
   "bugs": {
     "url": "https://github.com/v1ctr/tility-ui/issues"
@@ -22,7 +22,6 @@
   "keywords": [
     "react",
     "react-ui",
-    "react-button",
     "design-system",
     "tailwind",
     "tailwindcss",
@@ -35,11 +34,6 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "dependencies": {
-    "@react-aria/button": "^3.6.4",
-    "@react-aria/focus": "^3.10.1",
-    "@react-aria/interactions": "^3.13.1",
-    "@react-types/button": "^3.7.0",
-    "@tility-ui/theme": "workspace:*",
     "@tility-ui/utils": "workspace:*"
   },
   "peerDependencies": {

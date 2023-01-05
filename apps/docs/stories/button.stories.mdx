@@ -1,20 +1,312 @@
 import { Button } from "@tility-ui/button/src";
+import { ThemeProvider } from "@tility-ui/theme";
 import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs";
 
-<Meta title="Components/Button" component={Button} />
+<Meta
+  title="Atoms/Button"
+  component={Button}
+  argTypes={{
+    variant: {
+      description: "The style of the button.",
+      options: ["primary", "secondary", "text"],
+      control: {
+        type: "select",
+      },
+      table: {
+        type: { summary: "string" },
+        defaultValue: { summary: '"primary"' },
+      },
+    },
+    size: {
+      description: "The size of the button.",
+      options: ["xs", "sm", "md", "lg", "xl"],
+      control: {
+        type: "select",
+      },
+      table: {
+        type: { summary: "string" },
+        defaultValue: { summary: '"md"' },
+      },
+    },
+    isLoading: {
+      description: "Whether the loading spinner should be displayed.",
+      table: {
+        type: { summary: "boolean" },
+        defaultValue: { summary: "false" },
+      },
+    },
+    isDisabled: {
+      description: "Whether the button is disabled.",
+      table: {
+        type: { summary: "boolean" },
+        defaultValue: { summary: "false" },
+      },
+    },
+    onPress: {
+      description:
+        "Handler that is called when the press is released over the target.",
+      action: "pressed",
+      table: {
+        type: { summary: "function( pressEvent )" },
+        category: "Events",
+      },
+    },
+    onPressStart: {
+      description: "Handler that is called when a press interaction starts.",
+      action: "pressStarted",
+      table: {
+        type: { summary: "function( pressEvent )" },
+        category: "Events",
+      },
+    },
+    onPressEnd: {
+      description:
+        "Handler that is called when a press interaction ends, either over the target or when the pointer leaves the target.",
+      action: "pressEnded",
+      table: {
+        type: { summary: "function( pressEvent )" },
+        category: "Events",
+      },
+    },
+    onPressChange: {
+      description: "Handler that is called when the press state changes.",
+      action: "pressChanged",
+      table: {
+        type: { summary: "function( isPressed )" },
+        category: "Events",
+      },
+    },
+    onPressUp: {
+      description:
+        "Handler that is called when a press is released over the target, regardless of whether it started on the target or not.",
+      action: "pressedUp",
+      table: {
+        type: { summary: "function( pressEvent )" },
+        category: "Events",
+      },
+    },
+    autoFocus: {
+      description: "Whether the element should receive focus on render.",
+      table: {
+        type: { summary: "boolean" },
+      },
+    },
+    onFocus: {
+      description: "Handler that is called when the element receives focus.",
+      action: "focused",
+      table: {
+        type: { summary: "function( focusEvent )" },
+        category: "Events",
+      },
+    },
+    onBlur: {
+      description: "Handler that is called when the element loses focus.",
+      action: "blured",
+      table: {
+        type: { summary: "function( focusEvent )" },
+        category: "Events",
+      },
+    },
+    onFocusChange: {
+      description:
+        "Handler that is called when the element's focus status changes.",
+      action: "focusChanged",
+      table: {
+        type: { summary: "function( isFocused )" },
+        category: "Events",
+      },
+    },
+    onKeyDown: {
+      description: "Handler that is called when a key is pressed.",
+      action: "keyPressed",
+      table: {
+        type: { summary: "function( keyboardEvent )" },
+        category: "Events",
+      },
+    },
+    onKeyUp: {
+      description: "Handler that is called when a key is released.",
+      action: "keyReleased",
+      table: {
+        type: { summary: "function( keyboardEvent )" },
+        category: "Events",
+      },
+    },
+    type: {
+      description: "The behavior of the button when used in an HTML form.",
+      options: ["button", "submit", "reset"],
+      control: {
+        type: "select",
+      },
+      table: {
+        type: { summary: "string" },
+        defaultValue: { summary: '"button"' },
+      },
+    },
+    excludeFromTabOrder: {
+      description:
+        "Whether to exclude the element from the sequential tab order. If true, the element will not be focusable via the keyboard by tabbing. This should be avoided except in rare scenarios where an alternative means of accessing the element or its functionality via the keyboard is available.",
+      table: {
+        type: { summary: "boolean" },
+        defaultValue: { summary: "false" },
+      },
+    },
+    id: {
+      description: "The element's unique identifier.",
+      control: {
+        type: "text",
+      },
+      table: {
+        type: { summary: "string" },
+      },
+    },
+    "aria-label": {
+      description: "Defines a string value that labels the current element.",
+      control: {
+        type: "text",
+      },
+      table: {
+        type: { summary: "string" },
+      },
+    },
+    "aria-labelledby": {
+      description:
+        "Identifies the element (or elements) that labels the current element.",
+      control: {
+        type: "text",
+      },
+      table: {
+        type: { summary: "string" },
+      },
+    },
+    "aria-describedby": {
+      description:
+        "Identifies the element (or elements) that describes the object.",
+      control: {
+        type: "text",
+      },
+      table: {
+        type: { summary: "string" },
+      },
+    },
+    "aria-details": {
+      description:
+        "Identifies the element (or elements) that provide a detailed, extended description for the object.",
+      control: {
+        type: "text",
+      },
+      table: {
+        type: { summary: "string" },
+      },
+    },
+    "aria-expanded": {
+      description:
+        "Indicates whether the element, or another grouping element it controls, is currently expanded or collapsed.",
+      table: {
+        type: { summary: "boolean" },
+      },
+    },
+  }}
+/>
+
+export const Template = (args) => <Button {...args}>Click me</Button>;
 
 # Button
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget consectetur tempor, nisl nunc egestas nisi, euismod aliquam nisl nunc euismod.
+The `<Button>` element is an interactive element activated by a user with a mouse, keyboard, finger, voice command, or other assistive technology.
+It can be customized with different variants or sizes.
+
+## Variants
+
+<Canvas>
+  <Story name="Default">{Template.bind({})}</Story>
+  <Story name="Secondary" args={{ variant: "secondary" }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Text" args={{ variant: "text" }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Sizes
+
+<Canvas>
+  <Story name="ExtraSmall" args={{ size: "xs" }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Small" args={{ size: "sm" }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Medium" args={{ size: "md" }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Large" args={{ size: "lg" }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="ExtraLarge" args={{ size: "xl" }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## States
+
+### Loading
+
+<Canvas>
+  <Button isLoading={true} size="xs">
+    Click me
+  </Button>
+  <Button isLoading={true} size="sm">
+    Click me
+  </Button>
+  <Story name="Loading" args={{ isLoading: true }}>
+    {Template.bind({})}
+  </Story>
+  <Button isLoading={true} size="lg">
+    Click me
+  </Button>
+  <Button isLoading={true} size="xl">
+    Click me
+  </Button>
+</Canvas>
+
+### Disabled
+
+<Canvas>
+  <Story name="Disabled" args={{ isDisabled: true }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Customizing
+
+<Canvas>
+  <Story
+    name="Customized"
+    decorators={[
+      (Story) => (
+        <ThemeProvider
+          theme={{
+            button: {
+              variants: {
+                primary: {
+                  states: {
+                    enabled: "bg-red-100 text-red-700 border border-red-700",
+                  },
+                },
+              },
+            },
+          }}
+        >
+          <Story />
+        </ThemeProvider>
+      ),
+    ]}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
 
 ## Props
 
-<ArgsTable of={Button} />
-
-## Examples
-
-<Canvas>
-  <Story name="Default">
-    <Button>Hello</Button>
-  </Story>
-</Canvas>
+<ArgsTable story="Default" />

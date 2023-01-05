@@ -5,6 +5,8 @@ module.exports = {
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
+    "@storybook/addon-controls",
+    "storybook-dark-mode",
     {
       name: "@storybook/addon-postcss",
       options: {
@@ -36,6 +38,10 @@ module.exports = {
               __dirname,
               "../../../packages/atoms/button/"
             ),
+          },
+          {
+            find: "@tility-ui/theme",
+            replacement: path.resolve(__dirname, "../../../packages/theme/"),
           },
         ],
       },
