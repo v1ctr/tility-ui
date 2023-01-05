@@ -9,8 +9,8 @@
     "clean": "rm -rf .turbo && rm -rf node_modules"
   },
   "dependencies": {
-    "@tility-ui/button": "workspace:0.0.0",
-    "@tility-ui/theme": "workspace:0.0.0",
+    "@tility-ui/button": "workspace:0.1.0",
+    "@tility-ui/theme": "workspace:0.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -26,7 +26,7 @@
     "@tility-ui/tsconfig": "workspace:0.0.0",
     "@tility-ui/twconfig": "workspace:0.0.0",
     "@vitejs/plugin-react": "^1.3.2",
-    "eslint-config-tility": "workspace:0.0.0",
+    "eslint-config-tility": "workspace:0.1.0",
     "serve": "^13.0.4",
     "storybook-dark-mode": "^2.0.5",
     "typescript": "^4.9.3",

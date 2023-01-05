@@ -1,6 +1,7 @@
 {
   "name": "@tility-ui/theme",
-  "version": "0.0.0",
+  "description": "Default styling for tility-ui components",
+  "version": "0.1.0",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -34,6 +35,9 @@
   },
   "dependencies": {
     "@tility-ui/utils": "workspace:*"
+  },
+  "peerDependencies": {
+    "tailwindcss": "^3"
   },
   "devDependencies": {
     "@tility-ui/tsconfig": "workspace:*",

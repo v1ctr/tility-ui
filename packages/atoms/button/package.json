@@ -1,7 +1,7 @@
 {
   "name": "@tility-ui/button",
   "description": "A customizable react button",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -41,6 +41,9 @@
     "@react-types/button": "^3.7.0",
     "@tility-ui/theme": "workspace:*",
     "@tility-ui/utils": "workspace:*"
+  },
+  "peerDependencies": {
+    "tailwindcss": "^3"
   },
   "devDependencies": {
     "@tility-ui/tsconfig": "workspace:*",

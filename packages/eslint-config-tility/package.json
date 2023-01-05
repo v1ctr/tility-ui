@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-tility",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "main": "index.js",
   "license": "MIT",
   "homepage": "https://github.com/v1ctr/tility-ui#readme",
