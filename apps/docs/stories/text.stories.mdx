@@ -1,0 +1,97 @@
+import { Text } from "@tility-ui/typography/src";
+import { ThemeProvider } from "@tility-ui/theme";
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs";
+
+<Meta
+  title="Typography/Text"
+  component={Text}
+  argTypes={{
+    variant: {
+      description: "The style of the text.",
+      options: ["primary", "secondary"],
+      control: {
+        type: "select",
+      },
+      table: {
+        type: { summary: "string" },
+        defaultValue: { summary: '"primary"' },
+      },
+    },
+    size: {
+      description: "The size of the text.",
+      options: ["xs", "sm", "md", "lg", "xl"],
+      control: {
+        type: "select",
+      },
+      table: {
+        type: { summary: "string" },
+        defaultValue: { summary: '"md"' },
+      },
+    },
+  }}
+/>
+
+export const Template = (args) => <Text {...args}>Lorem ipsum</Text>;
+
+# Text
+
+The `<Text>` element is used to display text paragraphs.
+It can be customized with different variants or sizes.
+
+## Variants
+
+<Canvas>
+  <Story name="Default">{Template.bind({})}</Story>
+  <Story name="Secondary" args={{ variant: "secondary" }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Sizes
+
+<Canvas>
+  <Story name="ExtraSmall" args={{ size: "xs" }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Small" args={{ size: "sm" }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Medium" args={{ size: "md" }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Large" args={{ size: "lg" }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="ExtraLarge" args={{ size: "xl" }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Customizing
+
+<Canvas>
+  <Story
+    name="Customized"
+    decorators={[
+      (Story) => (
+        <ThemeProvider
+          theme={{
+            text: {
+              variants: {
+                primary: "text-white bg-gray-400",
+              },
+            },
+          }}
+        >
+          <Story />
+        </ThemeProvider>
+      ),
+    ]}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Props
+
+<ArgsTable story="Medium" />

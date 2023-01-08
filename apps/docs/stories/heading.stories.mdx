@@ -1,0 +1,108 @@
+import { Heading } from "@tility-ui/typography/src";
+import { ThemeProvider } from "@tility-ui/theme";
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs";
+
+<Meta
+  title="Typography/Heading"
+  component={Heading}
+  argTypes={{
+    variant: {
+      description: "The style of the heading.",
+      options: ["primary", "secondary"],
+      control: {
+        type: "select",
+      },
+      table: {
+        type: { summary: "string" },
+        defaultValue: { summary: '"primary"' },
+      },
+    },
+    size: {
+      description: "The size of the heading.",
+      options: ["xs", "sm", "md", "lg", "xl"],
+      control: {
+        type: "select",
+      },
+      table: {
+        type: { summary: "string" },
+        defaultValue: { summary: '"md"' },
+      },
+    },
+    as: {
+      description: "The html element the heading should be rendered as.",
+      options: ["h1", "h2", "h3", "h4", "h5", "h6"],
+      control: {
+        type: "select",
+      },
+      table: {
+        type: { summary: "string" },
+        defaultValue: { summary: '"h1"' },
+      },
+    },
+  }}
+/>
+
+export const Template = (args) => <Heading {...args}>Heading</Heading>;
+
+# Heading
+
+The `<Heading>` element is used to display titles or subtitles.
+It can be customized with different variants or sizes.
+
+## Variants
+
+<Canvas>
+  <Story name="Default">{Template.bind({})}</Story>
+  <Story name="Secondary" args={{ variant: "secondary" }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Sizes
+
+<Canvas>
+  <Story name="ExtraSmall" args={{ size: "xs" }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Small" args={{ size: "sm" }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Medium" args={{ size: "md" }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Large" args={{ size: "lg" }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="ExtraLarge" args={{ size: "xl" }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Customizing
+
+<Canvas>
+  <Story
+    name="Customized"
+    decorators={[
+      (Story) => (
+        <ThemeProvider
+          theme={{
+            heading: {
+              sizes: {
+                md: "text-5xl text-sky-500",
+              },
+            },
+          }}
+        >
+          <Story />
+        </ThemeProvider>
+      ),
+    ]}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Props
+
+<ArgsTable story="Medium" />
