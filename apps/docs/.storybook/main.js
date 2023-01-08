@@ -43,6 +43,13 @@ module.exports = {
             find: "@tility-ui/theme",
             replacement: path.resolve(__dirname, "../../../packages/theme/"),
           },
+          {
+            find: "@tility-ui/typography",
+            replacement: path.resolve(
+              __dirname,
+              "../../../packages/typography/"
+            ),
+          },
         ],
       },
     };
