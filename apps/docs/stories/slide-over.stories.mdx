@@ -1,0 +1,188 @@
+import { useState } from "react";
+import { SlideOver, AnimatePresence } from "@tility-ui/slide-over/src";
+import { Button } from "@tility-ui/button/src";
+import { ThemeProvider } from "@tility-ui/theme";
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs";
+
+<Meta
+  title="Overlays/Slide-Over"
+  component={SlideOver}
+  decorators={[
+    (Story) => (
+      <ThemeProvider>
+        <Story />
+      </ThemeProvider>
+    ),
+  ]}
+  argTypes={{
+    size: {
+      description: "The size of the slide over.",
+      options: ["xs", "sm", "md", "lg", "xl"],
+      control: {
+        type: "select",
+      },
+      table: {
+        type: { summary: "string" },
+        defaultValue: { summary: '"md"' },
+      },
+    },
+    role: {
+      description: "The accessibility role for the dialog.",
+      options: ["dialog", "alertdialog"],
+      control: {
+        type: "select",
+      },
+      table: {
+        type: { summary: "string" },
+        defaultValue: { summary: '"dialog"' },
+      },
+    },
+    isDismissable: {
+      description:
+        "Whether to close the modal when the user interacts outside it.",
+      table: {
+        type: { summary: "boolean" },
+        defaultValue: { summary: "false" },
+      },
+    },
+    isKeyboardDismissDisabled: {
+      description:
+        "Whether pressing the escape key to close the modal should be disabled.",
+      table: {
+        type: { summary: "boolean" },
+        defaultValue: { summary: "false" },
+      },
+    },
+    onClose: {
+      description: "Handler that is called when the slide over is closed.",
+      action: "closed",
+      table: {
+        type: { summary: "function( )" },
+        category: "Events",
+      },
+    },
+    id: {
+      description: "The element's unique identifier.",
+      control: {
+        type: "text",
+      },
+      table: {
+        type: { summary: "string" },
+      },
+    },
+    "aria-label": {
+      description: "Defines a string value that labels the current element.",
+      control: {
+        type: "text",
+      },
+      table: {
+        type: { summary: "string" },
+      },
+    },
+    "aria-labelledby": {
+      description:
+        "Identifies the element (or elements) that labels the current element.",
+      control: {
+        type: "text",
+      },
+      table: {
+        type: { summary: "string" },
+      },
+    },
+    "aria-describedby": {
+      description:
+        "Identifies the element (or elements) that describes the object.",
+      control: {
+        type: "text",
+      },
+      table: {
+        type: { summary: "string" },
+      },
+    },
+    "aria-details": {
+      description:
+        "Identifies the element (or elements) that provide a detailed, extended description for the object.",
+      control: {
+        type: "text",
+      },
+      table: {
+        type: { summary: "string" },
+      },
+    },
+  }}
+/>
+
+export const Template = (args) => {
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <div>
+      <Button onPress={() => setIsOpen(true)}>
+        Open {args.size} Slide-Over
+      </Button>
+      <AnimatePresence>
+        {isOpen && (
+          <SlideOver
+            {...args}
+            isOpen={isOpen}
+            onClose={() => setIsOpen(false)}
+          ></SlideOver>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+};
+
+# Slide Over
+
+The `<SlideOver>` element is an overlay that slides in from the side.
+It can be customized with different sizes.
+
+## Default
+
+<Canvas>
+  <Story
+    name="Default"
+    parameters={{
+      docs: {
+        source: {
+          code: `
+            <AnimatePresence>
+            {isOpen && (
+              <SlideOver
+                {...args}
+                isOpen={isOpen}
+                onClose={() => setIsOpen(false)}
+              ></SlideOver>
+            )}
+          </AnimatePresence>`,
+        },
+      },
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Sizes
+
+<Canvas>
+  <Story name="ExtraSmall" args={{ size: "xs", isDismissable: true }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Small" args={{ size: "sm", isDismissable: true }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Medium" args={{ size: "md", isDismissable: true }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Large" args={{ size: "lg", isDismissable: true }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="ExtraLarge" args={{ size: "xl", isDismissable: true }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Props
+
+<ArgsTable story="Default" />
