@@ -1,4 +1,5 @@
 import { createContext, useContext, ReactNode } from "react";
+import { OverlayProvider } from "@react-aria/overlays";
 import { mergeDeep } from "@tility-ui/utils";
 import { defaultTheme, Theme } from "./theme";
 
@@ -24,7 +25,7 @@ export const ThemeProvider = ({
 
   return (
     <ThemeContext.Provider value={{ ...mergedTheme }}>
-      {children}
+      <OverlayProvider>{children}</OverlayProvider>
     </ThemeContext.Provider>
   );
 };

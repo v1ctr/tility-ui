@@ -50,6 +50,13 @@ module.exports = {
               "../../../packages/typography/"
             ),
           },
+          {
+            find: "@tility-ui/slide-over",
+            replacement: path.resolve(
+              __dirname,
+              "../../../packages/overlays/slide-over"
+            ),
+          },
         ],
       },
     };
