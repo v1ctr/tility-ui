@@ -1,0 +1,122 @@
+import { Header } from "@tility-ui/header/src";
+import { Button } from "@tility-ui/button/src";
+import { Heading, Text } from "@tility-ui/typography/src";
+import { ThemeProvider } from "@tility-ui/theme";
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs";
+
+<Meta
+  title="Molecules/Header"
+  component={Header}
+  argTypes={{
+    variant: {
+      description: "The style of the header.",
+      options: ["primary", "secondary"],
+      control: {
+        type: "select",
+      },
+      table: {
+        type: { summary: "string" },
+        defaultValue: { summary: '"primary"' },
+      },
+    },
+    size: {
+      description: "The size of the header.",
+      options: ["xs", "sm", "md", "lg", "xl"],
+      control: {
+        type: "select",
+      },
+      table: {
+        type: { summary: "string" },
+        defaultValue: { summary: '"md"' },
+      },
+    },
+    as: {
+      description: "The html element the header should be rendered as.",
+      options: ["div", "header"],
+      control: {
+        type: "select",
+      },
+      table: {
+        type: { summary: "string" },
+        defaultValue: { summary: '"div"' },
+      },
+    },
+  }}
+/>
+
+export const BasicTemplate = (args) => <Header {...args}>Title</Header>;
+
+export const ComplexTemplate = (args) => (
+  <Header {...args}>
+    <div>
+      <Heading size="sm">Title</Heading>
+      <Text size="md" variant="secondary">
+        Subtitle
+      </Text>
+    </div>
+    <Button variant="secondary">Login</Button>
+  </Header>
+);
+
+# Header
+
+The `<Header>` element is used for displaying a header.
+It can be customized with different variants or sizes.
+
+## Variants
+
+<Canvas>
+  <Story name="Default">{ComplexTemplate.bind({})}</Story>
+  <Story name="Secondary" args={{ variant: "secondary" }}>
+    {ComplexTemplate.bind({})}
+  </Story>
+</Canvas>
+
+## Sizes
+
+<Canvas>
+  <Story name="ExtraSmall" args={{ size: "xs" }}>
+    {BasicTemplate.bind({})}
+  </Story>
+  <Story name="Small" args={{ size: "sm" }}>
+    {BasicTemplate.bind({})}
+  </Story>
+  <Story name="Medium" args={{ size: "md" }}>
+    {BasicTemplate.bind({})}
+  </Story>
+  <Story name="Large" args={{ size: "lg" }}>
+    {BasicTemplate.bind({})}
+  </Story>
+  <Story name="ExtraLarge" args={{ size: "xl" }}>
+    {BasicTemplate.bind({})}
+  </Story>
+</Canvas>
+
+## Customizing
+
+<Canvas>
+  <Story
+    name="Customized"
+    decorators={[
+      (Story) => (
+        <ThemeProvider
+          theme={{
+            header: {
+              sizes: {
+                md: "h-40 text-5xl text-sky-500",
+              },
+            },
+          }}
+        >
+          <Story />
+        </ThemeProvider>
+      ),
+    ]}
+  >
+    {BasicTemplate.bind({})}
+  </Story>
+</Canvas>
+
+## Props
+
+<ArgsTable story="Medium" />

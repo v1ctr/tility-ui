@@ -57,6 +57,13 @@ module.exports = {
               "../../../packages/overlays/slide-over"
             ),
           },
+          {
+            find: "@tility-ui/header",
+            replacement: path.resolve(
+              __dirname,
+              "../../../packages/molecules/header"
+            ),
+          },
         ],
       },
     };

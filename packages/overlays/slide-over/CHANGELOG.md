@@ -1,5 +1,12 @@
 # @tility-ui/slide-over
 
+## 0.1.1
+
+### Patch Changes
+
+- Updated dependencies
+  - @tility-ui/theme@0.2.1
+
 ## 0.1.0
 
 ### Minor Changes

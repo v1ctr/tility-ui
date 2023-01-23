@@ -1,5 +1,11 @@
 # @tility-ui/theme
 
+## 0.2.1
+
+### Patch Changes
+
+- Added header component
+
 ## 0.2.0
 
 ### Minor Changes

@@ -1,7 +1,7 @@
 {
-  "name": "@tility-ui/button",
-  "description": "A customizable react button",
-  "version": "0.1.3",
+  "name": "@tility-ui/header",
+  "description": "A customizable react header",
+  "version": "0.1.0",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -14,7 +14,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/v1ctr/tility-ui",
-    "directory": "packages/atoms/button"
+    "directory": "packages/molecules/header"
   },
   "bugs": {
     "url": "https://github.com/v1ctr/tility-ui/issues"
@@ -22,7 +22,7 @@
   "keywords": [
     "react",
     "react-ui",
-    "react-button",
+    "react-header",
     "design-system",
     "tailwind",
     "tailwindcss",
@@ -35,10 +35,6 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "dependencies": {
-    "@react-aria/button": "^3.6.4",
-    "@react-aria/focus": "^3.10.1",
-    "@react-aria/interactions": "^3.13.1",
-    "@react-types/button": "^3.7.0",
     "@tility-ui/theme": "workspace:*",
     "@tility-ui/utils": "workspace:*"
   },
