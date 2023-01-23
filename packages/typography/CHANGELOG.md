@@ -1,5 +1,12 @@
 # @tility-ui/typography
 
+## 0.0.3
+
+### Patch Changes
+
+- Updated dependencies
+  - @tility-ui/theme@0.2.1
+
 ## 0.0.2
 
 ### Patch Changes
