@@ -64,6 +64,13 @@ module.exports = {
               "../../../packages/molecules/header"
             ),
           },
+          {
+            find: "@tility-ui/input",
+            replacement: path.resolve(
+              __dirname,
+              "../../../packages/atoms/input"
+            ),
+          },
         ],
       },
     };

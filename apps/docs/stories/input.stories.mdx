@@ -1,0 +1,523 @@
+import { Input } from "@tility-ui/input/src";
+import { ThemeProvider } from "@tility-ui/theme";
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs";
+
+<Meta
+  title="Atoms/Input"
+  component={Input}
+  args={{
+    label: "Name",
+  }}
+  argTypes={{
+    variant: {
+      description: "The style of the input.",
+      options: ["primary", "secondary"],
+      control: {
+        type: "select",
+      },
+      table: {
+        type: { summary: "string" },
+        defaultValue: { summary: '"primary"' },
+      },
+    },
+    size: {
+      description: "The size of the input.",
+      options: ["xs", "sm", "md", "lg", "xl"],
+      control: {
+        type: "select",
+      },
+      table: {
+        type: { summary: "string" },
+        defaultValue: { summary: '"md"' },
+      },
+    },
+    "aria-autocomplete": {
+      description:
+        "Indicates whether inputting text could trigger display of one or more predictions of the user's intended value for an input and specifies how predictions would be presented if they are made.",
+      options: ["none", "inline", "list", "both"],
+      control: {
+        type: "select",
+      },
+      table: {
+        type: { summary: "string" },
+        defaultValue: { summary: '""' },
+      },
+    },
+    "aria-haspopup": {
+      description:
+        "Indicates the availability and type of interactive popup element, such as menu or dialog, that can be triggered by an element.",
+      options: ["false", "true", "menu", "listbox", "tree", "grid", "dialog"],
+      control: {
+        type: "select",
+      },
+      table: {
+        type: { summary: "string" },
+        defaultValue: { summary: '""' },
+      },
+    },
+    isDisabled: {
+      description: "Whether the input is disabled.",
+      table: {
+        type: { summary: "boolean" },
+        defaultValue: { summary: "false" },
+      },
+    },
+    isReadOnly: {
+      description:
+        "Whether the input can be selected but not changed by the user.",
+      table: {
+        type: { summary: "boolean" },
+        defaultValue: { summary: "false" },
+      },
+    },
+    validationState: {
+      description:
+        "Whether the input should display its 'valid' or 'invalid' visual styling.",
+      options: ["valid", "invalid"],
+      control: {
+        type: "select",
+      },
+      table: {
+        type: { summary: "string" },
+        defaultValue: { summary: '""' },
+      },
+    },
+    isRequired: {
+      description:
+        "Whether user input is required on the input before form submission.",
+      table: {
+        type: { summary: "boolean" },
+        defaultValue: { summary: "false" },
+      },
+    },
+    description: {
+      description:
+        "A description for the field. Provides a hint such as specific requirements for what to choose.",
+      control: {
+        type: "text",
+      },
+      table: {
+        type: { summary: "string" },
+      },
+    },
+    errorMessage: {
+      description: "An error message for the field.",
+      control: {
+        type: "text",
+      },
+      table: {
+        type: { summary: "string" },
+      },
+    },
+    autoFocus: {
+      description: "Whether the element should receive focus on render.",
+      table: {
+        type: { summary: "boolean" },
+        defaultValue: { summary: "false" },
+      },
+    },
+    onFocus: {
+      description: "Handler that is called when the element receives focus.",
+      action: "focused",
+      table: {
+        type: { summary: "function( focusEvent )" },
+        category: "Events",
+      },
+    },
+    onBlur: {
+      description: "Handler that is called when the element loses focus.",
+      action: "blured",
+      table: {
+        type: { summary: "function( focusEvent )" },
+        category: "Events",
+      },
+    },
+    onFocusChange: {
+      description:
+        "Handler that is called when the element's focus status changes.",
+      action: "focusChanged",
+      table: {
+        type: { summary: "function( isFocused )" },
+        category: "Events",
+      },
+    },
+    onKeyDown: {
+      description: "Handler that is called when a key is pressed.",
+      action: "keyPressed",
+      table: {
+        type: { summary: "function( keyboardEvent )" },
+        category: "Events",
+      },
+    },
+    onKeyUp: {
+      description: "Handler that is called when a key is released.",
+      action: "keyReleased",
+      table: {
+        type: { summary: "function( keyboardEvent )" },
+        category: "Events",
+      },
+    },
+    placeholder: {
+      description:
+        "Temporary text that occupies the text input when it is empty.",
+      control: {
+        type: "text",
+      },
+      table: {
+        type: { summary: "string" },
+      },
+    },
+    value: {
+      description: "The current value (controlled).",
+      control: {
+        type: "text",
+      },
+      table: {
+        type: { summary: "string" },
+      },
+    },
+    defaultValue: {
+      description: "The default value (uncontrolled).",
+      control: {
+        type: "text",
+      },
+      table: {
+        type: { summary: "string" },
+      },
+    },
+    onChange: {
+      description: "Handler that is called when the value changes.",
+      action: "changed",
+      table: {
+        type: { summary: "function( keyboardEvent )" },
+        category: "Events",
+      },
+    },
+    label: {
+      description: "The content to display as the label.",
+      control: {
+        type: "text",
+      },
+      table: {
+        type: { summary: "string" },
+      },
+    },
+    excludeFromTabOrder: {
+      description:
+        "Whether to exclude the element from the sequential tab order. If true, the element will not be focusable via the keyboard by tabbing. This should be avoided except in rare scenarios where an alternative means of accessing the element or its functionality via the keyboard is available.",
+      table: {
+        type: { summary: "boolean" },
+        defaultValue: { summary: "false" },
+      },
+    },
+    id: {
+      description: "The element's unique identifier.",
+      control: {
+        type: "text",
+      },
+      table: {
+        type: { summary: "string" },
+      },
+    },
+    autoComplete: {
+      description:
+        "Describes the type of autocomplete functionality the input should provide if any.",
+      control: {
+        type: "text",
+      },
+      table: {
+        type: { summary: "string" },
+      },
+    },
+    maxLength: {
+      description: "The maximum number of characters supported by the input.",
+      control: {
+        type: "number",
+      },
+      table: {
+        type: { summary: "number" },
+      },
+    },
+    minLength: {
+      description: "The minimum number of characters required by the input. ",
+      control: {
+        type: "number",
+      },
+      table: {
+        type: { summary: "number" },
+      },
+    },
+    pattern: {
+      description:
+        "Regex pattern that the value of the input must match to be valid.",
+      control: {
+        type: "text",
+      },
+      table: {
+        type: { summary: "string" },
+      },
+    },
+    type: {
+      description: "The type of input to render.",
+      options: ["text", "search", "url", "tel", "email", "password"],
+      control: {
+        type: "select",
+      },
+      table: {
+        type: { summary: "string" },
+        defaultValue: { summary: '"text"' },
+      },
+    },
+    inputMode: {
+      description:
+        "Hints at the type of data that might be entered by the user while editing the element or its contents.",
+      options: [
+        "none",
+        "text",
+        "tel",
+        "url",
+        "email",
+        "numeric",
+        "decimal",
+        "search",
+      ],
+      control: {
+        type: "select",
+      },
+      table: {
+        type: { summary: "string" },
+        defaultValue: { summary: '"button"' },
+      },
+    },
+    onCopy: {
+      description: "Handler that is called when the user copies text.",
+      action: "copied",
+      table: {
+        type: { summary: "function( )" },
+        category: "Events",
+      },
+    },
+    onCut: {
+      description: "Handler that is called when the user cuts text.",
+      action: "cut",
+      table: {
+        type: { summary: "function( )" },
+        category: "Events",
+      },
+    },
+    onPaste: {
+      description: "Handler that is called when the user pastes text.",
+      action: "pasted",
+      table: {
+        type: { summary: "function( )" },
+        category: "Events",
+      },
+    },
+    onCompositionStart: {
+      description:
+        "Handler that is called when a text composition system starts a new text composition session.",
+      action: "compositionStarted",
+      table: {
+        type: { summary: "function( )" },
+        category: "Events",
+      },
+    },
+    onCompositionEnd: {
+      description:
+        "Handler that is called when a text composition system completes or cancels the current text composition session.",
+      action: "compositionEnded",
+      table: {
+        type: { summary: "function( )" },
+        category: "Events",
+      },
+    },
+    onCompositionUpdate: {
+      description:
+        "Handler that is called when a new character is received in the current text composition session.",
+      action: "compositionUpdated",
+      table: {
+        type: { summary: "function( )" },
+        category: "Events",
+      },
+    },
+    onSelect: {
+      description: "Handler that is called when text in the input is selected.",
+      action: "selected",
+      table: {
+        type: { summary: "function( )" },
+        category: "Events",
+      },
+    },
+    onBeforeInput: {
+      description:
+        "Handler that is called when the input value is about to be modified.",
+      action: "beforeInput",
+      table: {
+        type: { summary: "function( )" },
+        category: "Events",
+      },
+    },
+    onInput: {
+      description: "Handler that is called when the input value is modified. ",
+      action: "input",
+      table: {
+        type: { summary: "function( )" },
+        category: "Events",
+      },
+    },
+    "aria-label": {
+      description: "Defines a string value that labels the current element.",
+      control: {
+        type: "text",
+      },
+      table: {
+        type: { summary: "string" },
+      },
+    },
+    "aria-labelledby": {
+      description:
+        "Identifies the element (or elements) that labels the current element.",
+      control: {
+        type: "text",
+      },
+      table: {
+        type: { summary: "string" },
+      },
+    },
+    "aria-describedby": {
+      description:
+        "Identifies the element (or elements) that describes the object.",
+      control: {
+        type: "text",
+      },
+      table: {
+        type: { summary: "string" },
+      },
+    },
+    "aria-details": {
+      description:
+        "Identifies the element (or elements) that provide a detailed, extended description for the object.",
+      control: {
+        type: "text",
+      },
+      table: {
+        type: { summary: "string" },
+      },
+    },
+    "aria-errormessage": {
+      description:
+        "Identifies the element that provides an error message for the object.",
+      control: {
+        type: "text",
+      },
+      table: {
+        type: { summary: "string" },
+      },
+    },
+  }}
+/>
+
+export const Template = (args) => <Input {...args} />;
+
+# Input
+
+The `<Input>` element is an interactive element used for entering data.
+It can be customized with different variants or sizes.
+
+## Variants
+
+<Canvas>
+  <Story name="Default">{Template.bind({})}</Story>
+  <Story name="Secondary" args={{ variant: "secondary" }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Sizes
+
+<Canvas>
+  <Story name="ExtraSmall" args={{ size: "xs" }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Small" args={{ size: "sm" }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Medium" args={{ size: "md" }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="Large" args={{ size: "lg" }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="ExtraLarge" args={{ size: "xl" }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## States
+
+### Disabled
+
+<Canvas>
+  <Story name="Disabled" args={{ isDisabled: true }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+### Invalid
+
+<Canvas>
+  <Story name="Invalid" args={{ validationState: "invalid" }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="WithErrorMessage"
+    args={{ errorMessage: "This field is required" }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Helpers
+
+<Canvas>
+  <Story name="WithDescription" args={{ description: "Enter your first name" }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="WithPlaceholder" args={{ placeholder: "e.g. John Doe" }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Customizing
+
+<Canvas>
+  <Story
+    name="Customized"
+    decorators={[
+      (Story) => (
+        <ThemeProvider
+          theme={{
+            input: {
+              variants: {
+                primary: {
+                  states: {
+                    enabled:
+                      "bg-yellow-100 text-yellow-700 border border-yellow-700",
+                  },
+                },
+              },
+            },
+          }}
+        >
+          <Story />
+        </ThemeProvider>
+      ),
+    ]}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Props
+
+<ArgsTable story="Default" />

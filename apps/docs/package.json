@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@tility-ui/button": "workspace:0.1.3",
+    "@tility-ui/input": "workspace:*",
     "@tility-ui/typography": "workspace:0.0.3",
     "@tility-ui/theme": "workspace:0.2.1",
     "react": "^18.2.0",
