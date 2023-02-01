@@ -1,5 +1,11 @@
 # @tility-ui/theme
 
+## 0.2.2
+
+### Patch Changes
+
+- b7e9611: Added input component
+
 ## 0.2.1
 
 ### Patch Changes

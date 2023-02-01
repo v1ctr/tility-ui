@@ -1,5 +1,12 @@
 # @tility-ui/button
 
+## 0.1.4
+
+### Patch Changes
+
+- Updated dependencies [b7e9611]
+  - @tility-ui/theme@0.2.2
+
 ## 0.1.3
 
 ### Patch Changes
