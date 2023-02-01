@@ -30,13 +30,13 @@ export const inputTheme: InputTheme = {
       base: "block w-full border shadow-sm rounded-md outline-none",
       states: {
         enabled:
-          "bg-white text-gray-900 dark:text-white border-gray-300 dark:bg-gray-700 focus:ring-0 focus:ring-offset-0",
+          "bg-white text-gray-900 dark:text-white border-gray-300 dark:border-gray-400 dark:bg-gray-700 focus:ring-0 focus:ring-offset-0",
         disabled:
-          "bg-white dark:bg-gray-700 text-gray-900/60 dark:text-white/60 border-gray-300 dark:bg-gray-700 focus:ring-0 focus:ring-offset-0",
+          "bg-white/60 dark:bg-gray-700/60 text-gray-900/60 dark:text-white/60 border-gray-300 dark:border-gray-400 focus:ring-0 focus:ring-offset-0",
         hovered:
-          "bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white border-gray-300 dark:bg-gray-700 focus:ring-0 focus:ring-offset-0",
+          "bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white border-gray-300 dark:border-gray-400 focus:ring-0 focus:ring-offset-0",
         focused:
-          "bg-white text-gray-900 dark:text-white border-gray-300 dark:bg-gray-700 outline-none focus:ring focus:dark:ring-offset-gray-900 focus:ring-blue-200 focus:dark:ring-gray-600",
+          "bg-white text-gray-900 dark:text-white border-gray-300 dark:border-gray-400 dark:bg-gray-700 outline-none focus:ring focus:dark:ring-offset-gray-900 focus:ring-blue-200 focus:dark:ring-gray-600",
         invalid:
           "bg-white dark:bg-gray-700 text-gray-900 dark:text-white border-red-400 focus:ring-0 focus:ring-offset-0",
       },
@@ -45,13 +45,13 @@ export const inputTheme: InputTheme = {
       base: "block w-full border rounded-md outline-none",
       states: {
         enabled:
-          "bg-gray-100 text-gray-900 dark:text-white border-gray-300 dark:bg-gray-700 focus:ring-0 focus:ring-offset-0",
+          "bg-gray-100 text-gray-900 dark:text-white border-gray-300 dark:border-gray-400 dark:bg-gray-800 focus:ring-0 focus:ring-offset-0",
         disabled:
-          "bg-white dark:bg-gray-700 text-gray-900/60 dark:text-white/60 border-gray-300 dark:bg-gray-700 focus:ring-0 focus:ring-offset-0",
+          "bg-white/60 dark:bg-gray-700/60 text-gray-900/60 dark:text-white/60 border-gray-300 dark:border-gray-400 focus:ring-0 focus:ring-offset-0",
         hovered:
-          "bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white border-gray-300 dark:bg-gray-700 focus:ring-0 focus:ring-offset-0",
+          "bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white border-gray-300 dark:border-gray-400 focus:ring-0 focus:ring-offset-0",
         focused:
-          "bg-white text-gray-900 dark:text-white border-gray-300 dark:bg-gray-700 outline-none focus:ring focus:dark:ring-offset-gray-900 focus:ring-blue-200 focus:dark:ring-gray-600",
+          "bg-white text-gray-900 dark:text-white border-gray-300 dark:border-gray-400 dark:bg-gray-800 outline-none focus:ring focus:dark:ring-offset-gray-900 focus:ring-blue-200 focus:dark:ring-gray-600",
         invalid:
           "bg-white dark:bg-gray-700 text-gray-900 dark:text-white border-red-400 focus:ring-0 focus:ring-offset-0",
       },

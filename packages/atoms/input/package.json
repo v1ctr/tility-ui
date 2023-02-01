@@ -35,7 +35,6 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "dependencies": {
-    "@react-aria/button": "^3.6.4",
     "@react-aria/focus": "^3.10.1",
     "@react-aria/textfield": "^3.8.1",
     "@react-types/textfield": "^3.6.2",
