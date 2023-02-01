@@ -5,7 +5,6 @@ module.exports = {
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
-    "@storybook/addon-controls",
     "storybook-dark-mode",
     {
       name: "@storybook/addon-postcss",
@@ -62,6 +61,13 @@ module.exports = {
             replacement: path.resolve(
               __dirname,
               "../../../packages/molecules/header"
+            ),
+          },
+          {
+            find: "@tility-ui/input",
+            replacement: path.resolve(
+              __dirname,
+              "../../../packages/atoms/input"
             ),
           },
         ],

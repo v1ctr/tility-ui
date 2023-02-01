@@ -1,0 +1,60 @@
+{
+  "name": "@tility-ui/input",
+  "description": "A customizable react input field",
+  "version": "0.0.0",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "license": "MIT",
+  "files": [
+    "dist/**"
+  ],
+  "homepage": "https://github.com/v1ctr/tility-ui#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/v1ctr/tility-ui",
+    "directory": "packages/atoms/input"
+  },
+  "bugs": {
+    "url": "https://github.com/v1ctr/tility-ui/issues"
+  },
+  "keywords": [
+    "react",
+    "react-ui",
+    "react-input",
+    "design-system",
+    "tailwind",
+    "tailwindcss",
+    "tility-ui"
+  ],
+  "scripts": {
+    "build": "tsup src/index.tsx --format esm,cjs --dts --external react",
+    "dev": "tsup src/index.tsx --format esm,cjs --watch --dts --external react",
+    "lint": "TIMING=1 eslint \"src/**/*.ts*\"",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
+  },
+  "dependencies": {
+    "@react-aria/focus": "^3.10.1",
+    "@react-aria/textfield": "^3.8.1",
+    "@react-types/textfield": "^3.6.2",
+    "@tility-ui/theme": "workspace:*",
+    "@tility-ui/utils": "workspace:*"
+  },
+  "peerDependencies": {
+    "tailwindcss": "^3"
+  },
+  "devDependencies": {
+    "@tility-ui/tsconfig": "workspace:*",
+    "@types/react": "^18.0.9",
+    "@types/react-dom": "^18.0.4",
+    "eslint": "^8.15.0",
+    "eslint-config-tility": "workspace:*",
+    "react": "^18.1.0",
+    "tsup": "^5.10.1",
+    "typescript": "^4.5.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
